@@ -1,121 +1,70 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Services Section</title>
-  <style>
-    /* General Styles */
-    .services-section {
-      padding: 80px 0;
-      background-color: #f5f5f5; /* Light gray background */
-      text-align: center;
-      font-family: 'Arial', sans-serif; /* Replace with the exact font if available */
-    }
+/* General reset and styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
 
-    .container {
-      max-width: 1200px;
-      margin: 0 auto;
-      padding: 0 20px;
-    }
+body {
+  font-family: Arial, sans-serif;
+  line-height: 1.6;
+  background-color: #000; /* Black background */
+  color: white; /* White text color */
+  overflow-x: hidden;
+}
 
-    .section-title {
-      font-size: 2.5rem;
-      margin-bottom: 10px;
-      color: #333;
-      font-weight: bold;
-    }
+.service-section {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  padding: 0 20%;
+  position: relative;
+  transition: background-color 0.5s ease;
+}
 
-    .section-description {
-      font-size: 1.1rem;
-      color: #666;
-      margin-bottom: 50px;
-    }
+.container {
+  display: flex;
+  width: 100%;
+  align-items: center;
+}
 
-    /* Horizontal Scrolling Container */
-    .services-scroll-container {
-      overflow-x: auto; /* Enable horizontal scrolling */
-      padding-bottom: 20px; /* Space for scrollbar */
-      -webkit-overflow-scrolling: touch; /* Smooth scrolling on touch devices */
-    }
+.image {
+  width: 15%; /* Smaller image width */
+  position: fixed;
+  left: 5%; /* Move image to the left-center */
+  top: 50%;
+  transform: translateY(-50%); /* Vertically center the image */
+  overflow: hidden;
+  z-index: -1; /* Keeps image in background */
+}
 
-    .services-grid {
-      display: flex;
-      gap: 30px; /* Spacing between cards */
-      width: max-content; /* Allow the grid to expand horizontally */
-      padding: 0 20px; /* Add padding to the sides */
-    }
+.image img {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+}
 
-    .service-card {
-      background: #fff;
-      padding: 30px;
-      border-radius: 10px;
-      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-      min-width: 250px; /* Set a minimum width for each card */
-      text-align: center;
-      transition: transform 0.3s ease;
-    }
+.text {
+  width: 50%;
+  padding-left: 30px;
+  position: relative;
+  z-index: 10;
+  text-align: left; /* Align text to left */
+}
 
-    .service-card:hover {
-      transform: translateY(-10px);
-    }
+.text h2 {
+  font-size: 3rem;
+  margin-bottom: 20px;
+}
 
-    .service-icon img {
-      width: 100px; /* Adjust image size */
-      height: 100px;
-      margin-bottom: 20px;
-      border-radius: 50%; /* Circular images */
-      object-fit: cover; /* Ensure images fit well */
-    }
+.text p {
+  font-size: 1.5rem;
+  line-height: 1.8;
+  transition: transform 0.3s ease;
+}
 
-    .service-title {
-      font-size: 1.5rem;
-      margin-bottom: 15px;
-      color: #333;
-      font-weight: bold;
-    }
-
-    .service-description {
-      font-size: 1rem;
-      color: #666;
-      line-height: 1.6;
-    }
-  </style>
-</head>
-<body>
-  <section class="services-section">
-    <div class="container">
-      <h2 class="section-title">Our Services</h2>
-      <p class="section-description">We offer a range of services to help you achieve your goals.</p>
-      <div class="services-scroll-container">
-        <div class="services-grid">
-          <!-- Service 1 -->
-          <div class="service-card">
-            <div class="service-icon">
-              <img src="https://via.placeholder.com/100" alt="Service Icon">
-            </div>
-            <h3 class="service-title">Web Design</h3>
-            <p class="service-description">We create stunning, user-friendly websites tailored to your brand.</p>
-          </div>
-          <!-- Service 2 -->
-          <div class="service-card">
-            <div class="service-icon">
-              <img src="https://via.placeholder.com/100" alt="Service Icon">
-            </div>
-            <h3 class="service-title">SEO Optimization</h3>
-            <p class="service-description">Boost your online presence with our expert SEO strategies.</p>
-          </div>
-          <!-- Service 3 -->
-          <div class="service-card">
-            <div class="service-icon">
-              <img src="https://via.placeholder.com/100" alt="Service Icon">
-            </div>
-            <h3 class="service-title">E-Commerce Solutions</h3>
-            <p class="service-description">Build and grow your online store with our e-commerce expertise.</p>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-</body>
-</html>
+/* Scroll effect for text movement */
+.text {
+  transition: transform 0.3s ease;
+}
